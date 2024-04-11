@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "name": "Auto Correct Extension",
+    "version": "1.0",
+    "description": "A simple auto-correct extension",
+    "permissions": [
+      "input",
+      "webRequestBlocking",
+      "<all_urls>"
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ],
+    "web_accessible_resources": [
+      "data.txt"
+    ]
+  }
+  
